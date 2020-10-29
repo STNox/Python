@@ -24,4 +24,12 @@ for i in range(1, 10):
         if table[i][k] == '*':
             mine_row.append('*')
         else:
-            count = 
+            count = (table[i-1][k-1] == '*') + (table[i-1][k] == '*') + (table[i-1][k+1] == '*') + (table[i][k-1] == '*') \
+                  + (table[i][k+1] == '*') + (table[i+1][k-1] == '*') + (table[i+1][k] == '*') + (table[i+1][k+1] == '*')
+            mine_row.append(str(count))
+    mine.append(mine_row)
+
+for i in range(9):
+    for k in range(9):
+        print(mine[i][k], end=' ')
+    print()
